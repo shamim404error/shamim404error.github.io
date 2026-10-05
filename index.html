@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Mizanur Rahman Shamim — Software Engineer & Cybersecurity Enthusiast. Digital Aurora Experience.">
+    <meta name="theme-color" content="#090710">
+    <title>Mizanur Rahman Shamim | Software Engineer & Cybersecurity</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%239b6dff'>◆</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+
+    <!-- JavaScript Files -->
+    <script src="js/config.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/three-scene.js" defer></script>
+</head>
+<body>
+
+    <!-- ====================================================================
+         CUSTOM CURSOR
+         ==================================================================== -->
+    <div class="cursor" id="custom-cursor" aria-hidden="true"></div>
+    <div class="cursor-follower" id="custom-follower" aria-hidden="true"></div>
+
+    <!-- ====================================================================
+         DYNAMIC ATMOSPHERIC BACKGROUND (Digital Aurora)
+         ==================================================================== -->
+    <div class="aurora-bg" aria-hidden="true">
+        <div class="bg-orb bg-orb--1"></div>
+        <div class="bg-orb bg-orb--2"></div>
+        <div class="bg-orb bg-orb--3"></div>
+    </div>
+
+    <!-- ====================================================================
+         FLOATING PILL NAVIGATION
+         ==================================================================== -->
+    <header class="nav" id="navbar">
+        <div class="nav__container">
+            <a href="#home" class="nav__logo" aria-label="Shamim - Home">SHAMIM.</a>
+
+            <nav class="nav__links" aria-label="Main Navigation">
+                <a href="#home" class="nav__link nav__link--active">Home</a>
+                <a href="#about" class="nav__link">About</a>
+                <a href="#skills" class="nav__link">Skills</a>
+                <a href="#projects" class="nav__link">Projects</a>
+                <a href="#digital-lab" class="nav__link">Lab</a>
+                <a href="#journey" class="nav__link">Journey</a>
+                <a href="#contact" class="nav__link">Contact</a>
+            </nav>
+
+            <div class="nav__status" title="Actively open for internships & opportunities">
+                <span class="nav__status-dot"></span>
+                <span>Available for opportunities</span>
+            </div>
+
+            <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true">
+        <nav class="mobile-overlay__nav" aria-label="Mobile Navigation">
+            <a href="#home" class="mobile-overlay__link">Home</a>
+            <a href="#about" class="mobile-overlay__link">About</a>
+            <a href="#skills" class="mobile-overlay__link">Skills</a>
+            <a href="#projects" class="mobile-overlay__link">Projects</a>
+            <a href="#digital-lab" class="mobile-overlay__link">Digital Lab</a>
+            <a href="#journey" class="mobile-overlay__link">Journey</a>
+            <a href="#contact" class="mobile-overlay__link">Contact</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- ================================================================
+             1. HERO SECTION
+             ================================================================ -->
+        <section id="home" class="hero">
+            <div class="container hero__content">
+                <div class="hero__label reveal">
+                    <span>◆</span> SOFTWARE ENGINEER • CYBERSECURITY
+                </div>
+                
+                <h1 class="hero__title reveal">
+                    Building ideas<br>
+                    into <span class="hero__title-gradient">digital experiences.</span>
+                </h1>
+                
+                <p class="hero__subtitle reveal">
+                    I'm Shamim — a CSE student exploring software engineering, cybersecurity and modern web technologies.
+                </p>
+                
+                <div class="hero__buttons reveal">
+                    <a href="#projects" class="btn-primary">
+                        <span>Explore My Work</span>
+                        <span>→</span>
+                    </a>
+                    <a href="#contact" class="btn-secondary">
+                        <span>Let's Connect</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive 3D Aurora Orb Canvas -->
+            <div id="hero-canvas" class="hero__canvas" aria-hidden="true"></div>
+
+            <!-- Floating Subtle Geometry -->
+            <div class="hero__decorations" aria-hidden="true">
+                <div class="hero__float-element"></div>
+                <div class="hero__float-element"></div>
+                <div class="hero__float-element"></div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             2. ABOUT SECTION
+             ================================================================ -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section__label reveal">01 / ABOUT</div>
+                <h2 class="section__title reveal">More than just code.</h2>
+
+                <div class="about__grid">
+                    <div class="about__text reveal">
+                        <p>
+                            I'm a Computer Science &amp; Engineering student who enjoys understanding how technology works beneath the surface. I build software, experiment with the web, and explore cybersecurity to understand how systems can be built and protected.
+                        </p>
+                        <p>
+                            My approach blends computational problem-solving with artistic attention to detail, turning complex logic into seamless digital architecture and robust defense mechanisms.
+                        </p>
+                    </div>
+
+                    <!-- Digital Identity Holographic Card -->
+                    <div class="about__card reveal" id="about-card">
+                        <div class="about__card-name">SHAMIM</div>
+                        <div class="about__card-roles">
+                            <span class="about__card-role">CSE STUDENT</span>
+                            <span class="about__card-role">SOFTWARE ENGINEER</span>
+                            <span class="about__card-role">CYBERSECURITY</span>
+                        </div>
+                        <div class="about__card-meta">
+                            <span class="about__card-detail">Green University of Bangladesh (GUB)</span>
+                            <span class="about__card-detail">Future: Cybersecurity Specialist</span>
+                            <span class="about__card-detail">System Defense &amp; Web Architect</span>
+                        </div>
+                        <div class="about__card-decor" aria-hidden="true">
+                            <span class="about__card-dot"></span>
+                            <span class="about__card-dot"></span>
+                            <span class="about__card-line"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             3. SKILLS SECTION (Interactive Technology Constellation)
+             ================================================================ -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section__label reveal">02 / SKILLS</div>
+                <h2 class="section__title reveal">Technology Constellation</h2>
+                <p class="section__subtitle reveal">
+                    An interconnected constellation of foundational programming, systems administration, and security tools. Hover any node to inspect capabilities.
+                </p>
+
+                <div class="skills__constellation reveal" id="skills-constellation">
+                    <!-- SVG connection lines rendered dynamically by JS -->
+                    <svg class="skills__lines" id="skills-lines" aria-hidden="true"></svg>
+
+                    <!-- 10 Technology Nodes -->
+                    <div class="skill-node" data-skill="C" data-category="Systems" data-description="Systems programming, pointer manipulation, memory allocation, and foundational data structures." data-depth="1.2">
+                        <span class="skill-node__icon">⚙️</span>
+                        <span class="skill-node__label">C</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="Python" data-category="Automation & AI" data-description="Scripting, rapid prototyping, socket automation, and security tooling." data-depth="0.9">
+                        <span class="skill-node__icon">🐍</span>
+                        <span class="skill-node__label">Python</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="HTML" data-category="Web Foundation" data-description="Accessible, semantic markup structured for performance and modern web standards." data-depth="1.1">
+                        <span class="skill-node__icon">🌐</span>
+                        <span class="skill-node__label">HTML</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="CSS" data-category="Design & Layout" data-description="Modern CSS3, responsive layouts, CSS variables, glassmorphism, and hardware-accelerated animations." data-depth="0.8">
+                        <span class="skill-node__icon">🎨</span>
+                        <span class="skill-node__label">CSS</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="JavaScript" data-category="Core Logic" data-description="ES6+, asynchronous event loops, DOM architecture, and interactive web graphics." data-depth="1.3">
+                        <span class="skill-node__icon">⚡</span>
+                        <span class="skill-node__label">JavaScript</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="Git" data-category="Version Control" data-description="Branching workflows, staging architecture, merge hygiene, and distributed code history." data-depth="0.7">
+                        <span class="skill-node__icon">🔀</span>
+                        <span class="skill-node__label">Git</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="GitHub" data-category="Collaboration" data-description="Remote repository management, open-source contribution, and project tracking." data-depth="1.1">
+                        <span class="skill-node__icon">🐙</span>
+                        <span class="skill-node__label">GitHub</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="Linux" data-category="Operating Systems" data-description="Unix filesystem navigation, bash scripting, permission architectures, and server management." data-depth="0.8">
+                        <span class="skill-node__icon">🐧</span>
+                        <span class="skill-node__label">Linux</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="Networking" data-category="Infrastructure" data-description="TCP/IP stack, OSI model, packet routing, DNS resolution, and traffic inspection." data-depth="1.0">
+                        <span class="skill-node__icon">🌍</span>
+                        <span class="skill-node__label">Networking</span>
+                    </div>
+
+                    <div class="skill-node" data-skill="Cybersecurity" data-category="Security Defense" data-description="Ethical hacking fundamentals, vulnerability assessments, and defensive countermeasures." data-depth="1.2">
+                        <span class="skill-node__icon">🛡️</span>
+                        <span class="skill-node__label">Cybersecurity</span>
+                    </div>
+
+                    <!-- Constellation Floating HUD Tooltip -->
+                    <div class="skills__tooltip" id="skills-tooltip" style="opacity: 0;">
+                        <div class="skills__tooltip-title">
+                            <span id="tooltip-icon">⚡</span>
+                            <span id="tooltip-title">JavaScript</span>
+                        </div>
+                        <div class="skills__tooltip-desc" id="tooltip-desc">
+                            Select or hover over any node in the constellation.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             4. PROJECTS SECTION (Cinematic Case Studies)
+             ================================================================ -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section__label reveal">03 / PROJECTS</div>
+                <h2 class="section__title reveal">Things I've Built</h2>
+                <p class="section__subtitle reveal">
+                    Featured case studies focusing on engineering principles, system performance, and modern digital aesthetics.
+                </p>
+
+                <div class="projects__list">
+                    <!-- Project 1 -->
+                    <article class="project-card reveal" data-project="01">
+                        <div class="project-card__visual" style="background: radial-gradient(circle at 30% 30%, #3d1566 0%, #0d0922 80%);">
+                            <div class="project-card__visual-inner">
+                                <span class="project-card__visual-icon">📊</span>
+                                <span class="project-card__visual-badge">SYSTEMS ARCHITECTURE</span>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <span class="project-card__number">01</span>
+                            <h3 class="project-card__title">Student Management System</h3>
+                            <p class="project-card__desc">
+                                A comprehensive student data management solution built with C, featuring structured file handling, dynamic memory allocation, binary search indexes, and rigorous input sanitization.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">C</span>
+                                <span class="project-card__tag">File I/O</span>
+                                <span class="project-card__tag">Data Structures</span>
+                                <span class="project-card__tag">Algorithms</span>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/shamim404error" class="btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+                                    <span>GitHub Repository</span>
+                                </a>
+                                <a href="#contact" class="btn-secondary btn-sm">
+                                    <span>Case Review</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card reveal" data-project="02">
+                        <div class="project-card__visual" style="background: radial-gradient(circle at 70% 30%, #1f2b60 0%, #090e24 80%);">
+                            <div class="project-card__visual-inner">
+                                <span class="project-card__visual-icon">🚀</span>
+                                <span class="project-card__visual-badge">SIMULATION ENGINE</span>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <span class="project-card__number">02</span>
+                            <h3 class="project-card__title">Space Mission Program</h3>
+                            <p class="project-card__desc">
+                                An interactive space mission simulator exploring orbital trajectory mechanics, fuel burn rates, trajectory vectors, and automated stage separations using computational algorithms.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">C</span>
+                                <span class="project-card__tag">Python</span>
+                                <span class="project-card__tag">Math Models</span>
+                                <span class="project-card__tag">Simulation</span>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/shamim404error" class="btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+                                    <span>GitHub Repository</span>
+                                </a>
+                                <a href="#contact" class="btn-secondary btn-sm">
+                                    <span>Mission Logs</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card reveal" data-project="03">
+                        <div class="project-card__visual" style="background: radial-gradient(circle at 40% 60%, #1e3b3e 0%, #0c181f 80%);">
+                            <div class="project-card__visual-inner">
+                                <span class="project-card__visual-icon">🌐</span>
+                                <span class="project-card__visual-badge">DIGITAL AURORA V2</span>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <span class="project-card__number">03</span>
+                            <h3 class="project-card__title">Personal Portfolio</h3>
+                            <p class="project-card__desc">
+                                A custom-crafted portfolio featuring a futuristic "Digital Aurora" visual identity, 3D WebGL Three.js shaders, interactive constellation graphs, and fluid micro-interactions.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">HTML5</span>
+                                <span class="project-card__tag">CSS3</span>
+                                <span class="project-card__tag">JavaScript</span>
+                                <span class="project-card__tag">Three.js</span>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/shamim404error" class="btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+                                    <span>GitHub Repository</span>
+                                </a>
+                                <a href="#home" class="btn-secondary btn-sm">
+                                    <span>Live Experience</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card reveal" data-project="04">
+                        <div class="project-card__visual" style="background: radial-gradient(circle at 50% 50%, #2e173e 0%, #0e0717 80%);">
+                            <div class="project-card__visual-inner">
+                                <span class="project-card__visual-icon">🛡️</span>
+                                <span class="project-card__visual-badge">IN DEVELOPMENT</span>
+                            </div>
+                        </div>
+                        <div class="project-card__content">
+                            <span class="project-card__number">04</span>
+                            <h3 class="project-card__title">Future Security Project</h3>
+                            <p class="project-card__desc">
+                                An active research project focusing on network penetration assessment, vulnerability profiling, and automated log threat detection currently being engineered.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">Cybersecurity</span>
+                                <span class="project-card__tag">Network Defense</span>
+                                <span class="project-card__tag">Python</span>
+                            </div>
+                            <div class="project-card__links">
+                                <a href="https://github.com/shamim404error" class="btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">
+                                    <span>Follow on GitHub</span>
+                                </a>
+                                <span class="btn-secondary btn-sm disabled">
+                                    <span>Release Pending</span>
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             5. SPECIAL SECTION: DIGITAL LAB (Futuristic Experimental Interface)
+             ================================================================ -->
+        <section id="digital-lab" class="lab section">
+            <div class="container">
+                <div class="section__label reveal">04 / DIGITAL LAB</div>
+                <h2 class="section__title reveal">Experimental Zone</h2>
+                <p class="section__subtitle reveal">
+                    Research fields and technical explorations beneath the surface. Click or hover any module to view live research telemetry.
+                </p>
+
+                <div class="lab__panel">
+                    <!-- Module 1 -->
+                    <div class="lab__module reveal" data-category="network">
+                        <div class="lab__module-header">
+                            <span class="lab__module-icon">🌐</span>
+                            <span class="lab__module-status">ACTIVE</span>
+                        </div>
+                        <div class="lab__module-label">NETWORK</div>
+                        <p class="lab__module-desc">
+                            Packet analysis, routing topology, Wireshark telemetry, TCP handshake tracing, and secure socket tunneling experiments.
+                        </p>
+                        <div class="lab__module-tags">
+                            <span class="lab__module-tag">TCP/IP</span>
+                            <span class="lab__module-tag">Wireshark</span>
+                            <span class="lab__module-tag">DNS</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="lab__module reveal" data-category="security">
+                        <div class="lab__module-header">
+                            <span class="lab__module-icon">🔒</span>
+                            <span class="lab__module-status">ANALYSIS</span>
+                        </div>
+                        <div class="lab__module-label">SECURITY</div>
+                        <p class="lab__module-desc">
+                            Vulnerability hunting, OWASP Top 10 profiling, ethical defense strategies, and cryptographic integrity mechanisms.
+                        </p>
+                        <div class="lab__module-tags">
+                            <span class="lab__module-tag">Ethical Hacking</span>
+                            <span class="lab__module-tag">OWASP</span>
+                            <span class="lab__module-tag">Defense</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="lab__module reveal" data-category="linux">
+                        <div class="lab__module-header">
+                            <span class="lab__module-icon">🐧</span>
+                            <span class="lab__module-status">KERNEL</span>
+                        </div>
+                        <div class="lab__module-label">LINUX</div>
+                        <p class="lab__module-desc">
+                            System administration, bash pipeline automation, daemon services, cron optimization, and permission privilege boundaries.
+                        </p>
+                        <div class="lab__module-tags">
+                            <span class="lab__module-tag">Bash</span>
+                            <span class="lab__module-tag">SysAdmin</span>
+                            <span class="lab__module-tag">Debian</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="lab__module reveal" data-category="web">
+                        <div class="lab__module-header">
+                            <span class="lab__module-icon">💻</span>
+                            <span class="lab__module-status">PROTOTYPE</span>
+                        </div>
+                        <div class="lab__module-label">WEB</div>
+                        <p class="lab__module-desc">
+                            Modern Web APIs, asynchronous micro-interactions, hardware-accelerated shaders, and performance-tuned UI architectures.
+                        </p>
+                        <div class="lab__module-tags">
+                            <span class="lab__module-tag">WebGL</span>
+                            <span class="lab__module-tag">CSS3</span>
+                            <span class="lab__module-tag">Vanilla JS</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 5 -->
+                    <div class="lab__module reveal" data-category="ai">
+                        <div class="lab__module-header">
+                            <span class="lab__module-icon">🧠</span>
+                            <span class="lab__module-status">EXPLORING</span>
+                        </div>
+                        <div class="lab__module-label">AI</div>
+                        <p class="lab__module-desc">
+                            Machine learning fundamentals, predictive algorithms, threat detection neural patterns, and generative interface concepts.
+                        </p>
+                        <div class="lab__module-tags">
+                            <span class="lab__module-tag">ML Basics</span>
+                            <span class="lab__module-tag">Data Models</span>
+                            <span class="lab__module-tag">Analytics</span>
+                        </div>
+                    </div>
+
+                    <!-- Module 6 -->
+                    <div class="lab__module reveal" data-category="code">
+                        <div class="lab__module-header">
+                            <span class="lab__module-icon">📝</span>
+                            <span class="lab__module-status">REFINED</span>
+                        </div>
+                        <div class="lab__module-label">CODE</div>
+                        <p class="lab__module-desc">
+                            Clean code design, algorithm efficiency profiling, modular software engineering, and rigorous test coverage.
+                        </p>
+                        <div class="lab__module-tags">
+                            <span class="lab__module-tag">C</span>
+                            <span class="lab__module-tag">Python</span>
+                            <span class="lab__module-tag">Design Patterns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             6. JOURNEY SECTION (Animated Glowing Timeline)
+             ================================================================ -->
+        <section id="journey" class="section journey-section">
+            <div class="container">
+                <div class="section__label reveal">05 / JOURNEY</div>
+                <h2 class="section__title reveal">My Journey</h2>
+                <p class="section__subtitle reveal">
+                    Evolution of technical milestones from foundational computer architecture to advanced security engineering.
+                </p>
+
+                <div class="timeline">
+                    <div class="timeline__track">
+                        <div class="timeline__line" aria-hidden="true"></div>
+
+                        <div class="timeline__node timeline-node">
+                            <div class="timeline__dot"></div>
+                            <div class="timeline__label">C Programming</div>
+                            <div class="timeline__desc">Mastered core pointers, memory structures, and algorithmic logic.</div>
+                        </div>
+
+                        <div class="timeline__node timeline-node">
+                            <div class="timeline__dot"></div>
+                            <div class="timeline__label">Python</div>
+                            <div class="timeline__desc">Automated scripting, data manipulation, and rapid system tooling.</div>
+                        </div>
+
+                        <div class="timeline__node timeline-node">
+                            <div class="timeline__dot"></div>
+                            <div class="timeline__label">Web Development</div>
+                            <div class="timeline__desc">Crafted interactive, semantic, and modern visual interfaces.</div>
+                        </div>
+
+                        <div class="timeline__node timeline-node">
+                            <div class="timeline__dot"></div>
+                            <div class="timeline__label">Git &amp; GitHub</div>
+                            <div class="timeline__desc">Version control discipline, remote collaboration, and repository integrity.</div>
+                        </div>
+
+                        <div class="timeline__node timeline-node">
+                            <div class="timeline__dot"></div>
+                            <div class="timeline__label">Networking</div>
+                            <div class="timeline__desc">Understood OSI layers, packet flows, protocols, and socket architecture.</div>
+                        </div>
+
+                        <div class="timeline__node timeline-node">
+                            <div class="timeline__dot"></div>
+                            <div class="timeline__label">Cybersecurity</div>
+                            <div class="timeline__desc">Exploring defense tactics, security auditing, and attack surfaces.</div>
+                        </div>
+
+                        <div class="timeline__node timeline__node--future timeline-node">
+                            <div class="timeline__dot"></div>
+                            <div class="timeline__label">Future: Security Engineering</div>
+                            <div class="timeline__desc">Building resilient digital infrastructure and specialized defense.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             7. CONTACT SECTION
+             ================================================================ -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="section__label reveal">06 / CONTACT</div>
+                <h2 class="contact__heading reveal">Let's create something interesting.</h2>
+                <p class="section__subtitle reveal">
+                    Have an idea, project or opportunity? I'd love to hear from you.
+                </p>
+
+                <!-- Interactive Direct Contact Cards -->
+                <div class="contact__cards reveal">
+                    <a href="mailto:shamimmizanurrahman87@gmail.com" class="contact__card">
+                        <span class="contact__card-icon">✉️</span>
+                        <div class="contact__card-label">EMAIL DIRECT</div>
+                        <div class="contact__card-value">shamimmizanurrahman87@gmail.com</div>
+                    </a>
+
+                    <a href="https://wa.me/8801611594255" class="contact__card" target="_blank" rel="noopener noreferrer">
+                        <span class="contact__card-icon">💬</span>
+                        <div class="contact__card-label">WHATSAPP CHAT</div>
+                        <div class="contact__card-value">+880 1611-594255</div>
+                    </a>
+
+                    <a href="https://github.com/shamim404error" class="contact__card" target="_blank" rel="noopener noreferrer">
+                        <span class="contact__card-icon">🐙</span>
+                        <div class="contact__card-label">GITHUB PROFILE</div>
+                        <div class="contact__card-value">github.com/shamim404error</div>
+                    </a>
+                </div>
+
+                <!-- Contact Form with Graceful Frontend Handling -->
+                <div class="contact__form-wrap reveal">
+                    <form class="contact__form" id="contact-form">
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" name="name" placeholder="e.g. Alex Mercer" required autocomplete="name">
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-email">Your Email Address</label>
+                            <input type="email" id="contact-email" name="email" placeholder="name@domain.com" required autocomplete="email">
+                        </div>
+
+                        <div class="contact__form-group">
+                            <label class="contact__form-label" for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" placeholder="Tell me about your opportunity or idea..." rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" id="btn-submit">
+                            <span>Send Message</span>
+                            <span>→</span>
+                        </button>
+                        
+                        <p class="contact__form-note">
+                            This launches your email client pre-filled with your message so you have full control over sending.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ====================================================================
+         FOOTER
+         ==================================================================== -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__brand">
+                <span class="nav__logo">SHAMIM.</span>
+                <p class="footer__tagline">Software Engineer • Cybersecurity Enthusiast</p>
+            </div>
+            
+            <div class="footer__social">
+                <a href="https://github.com/shamim404error" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:shamimmizanurrahman87@gmail.com">Email</a>
+                <a href="https://wa.me/8801611594255" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                <a href="#" onclick="alert('LinkedIn profile URL will be updated soon!'); return false;">LinkedIn (Soon)</a>
+            </div>
+        </div>
+        
+        <div class="footer__copyright">
+            © 2026 Mizanur Rahman Shamim. Designed with Digital Aurora Concept.
+        </div>
+    </footer>
+
+</body>
+</html>
